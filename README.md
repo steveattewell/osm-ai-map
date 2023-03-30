@@ -57,31 +57,29 @@ However, next step is to give it some hints as to how to do better filtering in 
 You will need to edit ```api-keys.js``` to include:
 1. An api key from OpenAI https://platform.openai.com/account/api-keys
 2. An api key for maptiler https://cloud.maptiler.com/account/keys/
+3. And you'll also need access to the GPT-4 API which currently has a waitlist: https://openai.com/waitlist/gpt-4-api 
 
 **You should NEVER disclose your API keys publicly, 
 or release this project live as your API keys will be exposed. This means 
 other will be able to see your API keys and use them, potentially costing you money.**
 
-3. And you'll also need access to ChatGPT-4 API which currently has a waitlist. https://openai.com/waitlist/gpt-4-api
-
 OpenAI's gpt-4 is used as the artificial intelligence https://openai.com/pricing , and Maptiler offer a service which shows the OpenStreetMap basemap. Maptiler have a free tier which is plenty if you're developing locally https://www.maptiler.com/cloud/pricing/ 
 
 ## Do not publish this project live in its current state
 
-This project is deliberately bare-bones using vanilla HTML, CSS and Javascript. It makes no effort to secure your API keys.
+This project is deliberately a bare-bones demonstrator using vanilla HTML, CSS and Javascript. It makes no effort to secure your API keys.
 
 If you make your version publicly available you'll be exposing your API keys which would allow 
-others to use them, and potentially spend your money! This project is a demonstrator and as such 
-does not put any work is securing API keys. If you want to make a publishable version of this you 
-need to put the work into some server-side development to secure your API keys.
+others to use them, and potentially spend your money! If you want to make a publishable version of this you 
+need to put the work in to some server-side development to secure your API keys.
 
-# I'm not a developer, really
+# I'm a UX designer Jim, not a developer
 So if you have suggestions or comments or want to make a better version, please do. 
 
 ## What could you investigate?
 
-I'd be very interested to see if you can improve the OpenAI prompt to make the call return more complex results
-from requests like "Buildings that are over 3m tall", or "buildings within 20 meters of roads".
+I'd be very interested to see if you can improve the OpenAI prompt to help it return valid results from more complex natrual language requests
+such as "Buildings that are over 3m tall", or "buildings within 20 meters of roads".
 Because that's what I'm going to be looking at next. There is some info about more complex 
 filtering of Overpass Turbo API calls here: http://dev.overpass-api.de/blog/numbers.html
 
