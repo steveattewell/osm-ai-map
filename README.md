@@ -83,4 +83,17 @@ such as "Buildings that are over 3m tall", or "buildings within 20 meters of roa
 Because that's what I'm going to be looking at next. There is some info about more complex 
 filtering of Overpass Turbo API calls here: http://dev.overpass-api.de/blog/numbers.html
 
+## Technologies and tools used
+**OpenAI  https://openai.com/** - an artificial intelligence research organization that develops and promotes AI in an open and responsible manner.
+
+**OpenStreetMap https://www.openstreetmap.org/** - a collaborative and open-source mapping platform where anyone can contribute and edit geographic data from around the world.
+
+**Overpass Turbo https://overpass-turbo.eu/** - a web-based tool and API that allows users to query and extract data from OpenStreetMap in various formats.
+
+**MapLibre  https://maplibre.org/** - a free and open-source map javascript (and native) library that enables users to create and display custom maps on websites and mobile apps.
+
+**Maptiler https://www.maptiler.com/** - a cloud-based mapping platform that provides tools to create, host, and distribute custom maps and geospatial data.
+
+Cheers,
+
 Steve https://twitter.com/steveattewell
