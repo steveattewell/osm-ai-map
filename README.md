@@ -62,7 +62,7 @@ other will be able to see your API keys and use them, potentially costing you mo
 
 3. And you'll also need access to ChatGPT-4 API which currently has a waitlist. https://openai.com/waitlist/gpt-4-api
 
-OpenAI is used as the Artificail intelligence, and Maptiler offer a service which shows the OpenStreetMap basemap. Maptiler have a free tier which is plenty if you're developing locally.
+OpenAI's gpt-4 is used as the artificial intelligence https://openai.com/pricing , and Maptiler offer a service which shows the OpenStreetMap basemap. Maptiler have a free tier which is plenty if you're developing locally https://www.maptiler.com/cloud/pricing/ 
 
 ## Do not publish this project live in its current state
 
