@@ -2,6 +2,9 @@
 This demonstrator connects to GPT-4 from OpenAI and uses it to interpret natural language requests into OpenStreetMap Overpass Turbo queries https://wiki.openstreetmap.org/wiki/Overpass_API . The Overpass Turbo API returns features from OpenStreetMap. 
 It has varying levels of success depending on what you ask it.
 
+> **Note**
+> I am a complete n00b at using GitHub, so bear that in mind!
+
 ## What is the role of the A.I. in all of this?
 It's important to state that the AI does not actually "get the data from OpenStreetMap". The A.I. interprets what you ask of it "i want to read a book" and uses it's existing knowledge of the OpenStreetMap data structure to write and provide us with a valid (and sometimes invalid!) query to that data. We then fall back to "normal" programming techniques to actually take that query, get the data from OpenStreetMap using Overpass Turbo API, and display it on the map. That's where I think these Large Language Model AIs are useful in this context; allowing people who have no knowledge of your data or the technicalities of making calls to your data to get something out of it. 
 
@@ -14,13 +17,12 @@ It's important to state that the AI does not actually "get the data from OpenStr
 You can see a video of an early verison here: https://twitter.com/steveattewell/status/1641060760875933696
 
 ## How does it work?
-1. It takes any input you give it e.g. "Car parks", or "I want to read a book".
-2. It takes your input and asks chatgpt-4 API to write a filter query 
+1. It takes any input you give it e.g. "Car parks", or "I want to read a book" and asks chatgpt-4 API to write a filter query 
 for the Overpass Turbo API 
-3. Takes the result from chatgpt-4 and then uses that to make a call to Overpass Turbo tog et features from OpenStreetMap
-4. Displays whatever features it recieved on the map (or an error if chatgpt-4 failed to write a great query.
+2. Takes the resultin query that gpt-4 write and then uses that to make a call to Overpass Turbo tog et features from OpenStreetMap
+3. Displays whatever features it recieved on the map (or an error if chatgpt-4 failed to write a great query.
 
-## If you centre the map over London and enter: "I want to see a show"
+## EXAMPLE: If you centre the map over London and enter: "I want to see a show"
 
 we ask chatgpt-4 AI:
 
@@ -38,11 +40,11 @@ The AI returns:
 
 ```data=[out:json][timeout:25];(node["amenity"="theatre"](50.8970265077177,-1.412417960123662,50.907072349108745,-1.3853862606643759);way["amenity"="theatre"](50.8970265077177,-1.412417960123662,50.907072349108745,-1.3853862606643759);relation["amenity"="theatre"](50.8970265077177,-1.412417960123662,50.907072349108745,-1.3853862606643759););out;>;out skel qt;```
 
-So we make this api call:
+So we use the above response from gpt-4 to make this api call:
 
 ```https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];(node["amenity"="theatre"](50.8970265077177,-1.412417960123662,50.907072349108745,-1.3853862606643759);way["amenity"="theatre"](50.8970265077177,-1.412417960123662,50.907072349108745,-1.3853862606643759);relation["amenity"="theatre"](50.8970265077177,-1.412417960123662,50.907072349108745,-1.3853862606643759););out;>;out skel qt;```
 
-...which returns a JSON object of results which we convert to geojson and display on the map.
+...which returns a JSON object of theatres and their locations which we convert to geojson and display on the map.
 
 ## What is it good / bad at?
 It works well if you ask for plain features, or something that it can reasonably easily "translate" into features that exist in OpenStreetMap.
