@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Search for any OSM feature using natural language">
+    <meta name="keywords" content="">
+    <title>OpenStreetMap AI Map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
+<link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
+
+   <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <script src="js/osmtogeojson.js"></script>
+    
+  </head>
+  
+  <body id="bodyTag" class="">
+    <div id="interface">
+      <div id="action" class="" aria-live="polite" >[messages show in this message box]</div>
+    <input type="text" id="searchBox" name="searchBox" placeholder="Find a map feature" >
+      <button id="searchButton">Find</button>
+
+<div id="results" aria-hidden="true">
+        <span id="final_span" class="final"></span>
+</div>
+</div>
+<a id="maptilerattribution" href="https://maptiler.com" target="_blank"><img  src="img/maptiler-logo-adaptive.svg"></a>
+<div id="map"></div>
+
+
+  </body>
+  <script type="module" src="js/index.js">
+
+  </script>
+</html>

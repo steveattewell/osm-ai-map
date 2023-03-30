@@ -1,0 +1,180 @@
+body{
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-size: 1em;
+    margin: 0;
+  }
+  #interim_span{
+    background-color: rgb(255, 254, 183);
+  }
+  button{
+    font-size:1.2em;
+    cursor:pointer;
+  }
+  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  #interface{
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    width: calc(100% - 20px);
+    background-color: #ffffffbb;
+    padding: 10px;
+    text-align: center;
+    /* border-radius: 16px 16px 0 0; */
+    padding: 20px 10px 10px 10px;
+    box-shadow: 0px 0px 31px -3px rgba(0,0,0,0.66);
+    
+  }
+
+  body.askingAI #interface{
+    top:100%;
+    bottom:auto;
+  }
+  .loader{
+    height:1em;
+  }
+  #searchBox{
+    width: calc(80% - 20px);
+    border: 2px solid #333;
+    font-size: 1.3em;
+    font-family: 'Poppins';
+    padding: 6px 20px;
+    border-radius: 1.3em;
+  }
+  #searchButton{
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 1.3em;
+    font-family: 'Poppins';
+    padding: 6px 10px;
+    border-radius: 0.2em;
+    background-color: #0B83FE;
+  }
+
+  #searchButton:active{
+    color: #0B83FE;
+    background-color: white;
+  }
+
+
+
+
+  #results{
+    height: 35px;
+overflow-y: hidden;
+width: calc(100% - 200px);
+margin: auto;
+margin-bottom: 0;
+font-size: 0.6em;
+color: #333;
+cursor: zoom-in;
+  }
+
+#results.expand{
+  position: fixed;
+    font-size: 1em;
+    top: 50%;
+    height: auto;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding:20px;
+    cursor: initial;
+    box-shadow: 0px 0px 170px black;
+}
+
+#action{
+position: fixed;
+left: 50%;
+top: 20px;
+background-color: #0B83FE;
+color: #fff;
+padding: 20px 35px;
+transform: translateX(-50%);
+border-radius: 28px;
+opacity: 0;
+pointer-events: none;
+
+
+}
+
+#action:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+width: 0;
+height: 0;
+border: 21px solid transparent;
+border-top-color: #0B83FE;
+border-bottom: 0;
+border-left: 0;
+margin-left: -10.5px;
+margin-bottom: -21px;
+}
+
+#action.warning{
+  background-color: #fe0b4c;
+}
+#action.warning::after{
+  border-top-color: #fe0b4c;
+}
+
+
+#action.show{
+opacity:1;
+}
+
+.runActionAnimation{
+animation-name: actionfadeout;
+animation-duration: 5s;
+}
+
+@keyframes actionfadeout {
+0% {opacity: 0;}
+10% {opacity: 1;}
+80% {opacity: 1;
+transform: translateX(-50%) translateY(0px)}
+100% {opacity: 0;
+transform: translateX(-50%) translateY(-20px);}
+}
+
+
+@keyframes focuspulse {
+0% {outline: 20px solid #ffd90000;}
+30% {outline: 15px solid #ffd90095;}
+100% {outline: 5px solid #ffd900;}
+}
+
+@keyframes mapfocuspulse {
+0% {outline: -20px solid #ffd90000;}
+30% {outline: -15px solid #ffd90095;}
+100% {outline: -5px solid #ffd900;}
+}
+
+*:focus
+{
+outline: 5px solid #ffd900;
+animation: focuspulse 0.5s;
+
+}
+canvas:focus{
+/* give a little space so that the outline can show */
+width: calc(100% - 10px) !important;
+margin-left:5px;
+margin-top: 5px;
+
+}
+
+
+
+#maptilerattribution{
+  position: fixed;
+  z-index: 10;
+  bottom: 112px;
+  left: 10px;
+}
+
+#maptilerattribution img{
+  width: 200px;
+}
