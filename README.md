@@ -1,11 +1,14 @@
-# osm-ai-map
+# Using AI to get features from OpenStreetMap
 This demonstrator connects to GPT-4 from OpenAI and uses it to interpret natural language requests into OpenStreetMap Overpass Turbo queries https://wiki.openstreetmap.org/wiki/Overpass_API . The Overpass Turbo API returns features from OpenStreetMap. 
 It has varying levels of success depending on what you ask it.
+
+## What is the role of the A.I. in all of this?
+It's important to state that the AI does not actually "get the data from OpenStreetMap". The A.I. interprets what you ask of it "i want to read a book" and uses it's existing knowledge of the OpenStreetMap data structure to write and provide us with a valid (and sometimes invalid!) query to that data. We then fall back to "normal" programming techniques to actually take that query, get the data, and display it on the map. That's where I think these Large Language Model AIs are useful in this context; allowing people who have no knowledge of your data or the technicalities of making calls to your data to get something out of it. 
 
 ## Asking the map...
 <img width="631" alt="Screenshot 2023-03-28 at 23 43 41" src="https://user-images.githubusercontent.com/21079244/228805890-9fa039d8-616c-47e7-9cd5-10967db53723.png">
 
-## Some result returned...
+## Some results returned...
 <img width="639" alt="Screenshot 2023-03-28 at 23 44 17" src="https://user-images.githubusercontent.com/21079244/228805924-50febac4-0fe9-4888-a6cf-e031140ad5c1.png">
 
 You can see a video of an early verison here: https://twitter.com/steveattewell/status/1641060760875933696
