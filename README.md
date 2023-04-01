@@ -18,8 +18,8 @@ You can see a video of an early verison here: https://twitter.com/steveattewell/
 
 ## How does it work?
 1. It takes any input you give it e.g. "Car parks", or "I want to read a book" and asks chatgpt-4 API to write a filter query 
-for the Overpass API 
-2. Takes the resultin query that gpt-4 write and then uses that to make a call to Overpass to get features from OpenStreetMap
+for Overpass API 
+2. Takes the resultin query that gpt-4 write and then uses that to make a call to the Overpass API to get features from OpenStreetMap
 3. Displays whatever features it recieved on the map (or an error if chatgpt-4 failed to write a great query.
 
 ## EXAMPLE: If you centre the map over London and enter: "I want to see a show"
@@ -81,14 +81,14 @@ So if you have suggestions or comments or want to make a better version, please 
 I'd be very interested to see if you can improve the OpenAI prompt to help it return valid results from more complex natrual language requests
 such as "Buildings that are over 3m tall", or "buildings within 20 meters of roads".
 Because that's what I'm going to be looking at next. There is some info about more complex 
-filtering of Overpass Turbo API calls here: http://dev.overpass-api.de/blog/numbers.html
+filtering of Overpass API calls here: http://dev.overpass-api.de/blog/numbers.html
 
 ## Technologies and tools used
 **OpenAI  https://openai.com/** - an artificial intelligence research organization that develops and promotes AI in an open and responsible manner.
 
 **OpenStreetMap https://www.openstreetmap.org/** - a collaborative and open-source mapping platform where anyone can contribute and edit geographic data from around the world.
 
-**Overpass Turbo https://overpass-turbo.eu/** - a web-based tool and API that allows users to query and extract data from OpenStreetMap in various formats.
+**Overpass API https://wiki.openstreetmap.org/wiki/Overpass_API** - an API that allows users to query and extract data from OpenStreetMap in various formats.
 
 **MapLibre  https://maplibre.org/** - a free and open-source map javascript (and native) library that enables users to create and display custom maps on websites and mobile apps.
 
