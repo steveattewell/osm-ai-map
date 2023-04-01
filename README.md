@@ -1,12 +1,12 @@
 # Using AI to get features from OpenStreetMap
-This demonstrator connects to GPT-4 from OpenAI and uses it to interpret natural language requests into OpenStreetMap Overpass Turbo queries https://wiki.openstreetmap.org/wiki/Overpass_API . The Overpass Turbo API returns features from OpenStreetMap. 
+This demonstrator connects to GPT-4 from OpenAI and uses it to interpret natural language requests into OpenStreetMap Overpass API queries https://wiki.openstreetmap.org/wiki/Overpass_API . The Overpass API returns features from OpenStreetMap. 
 It has varying levels of success depending on what you ask it.
 
 > **Note**
 > I am a complete n00b at using GitHub, so bear that in mind!
 
 ## What is the role of the A.I. in all of this?
-It's important to state that the AI does not actually "get the data from OpenStreetMap". The A.I. interprets what you ask of it "i want to read a book" and uses it's existing knowledge of the OpenStreetMap data structure to write and provide us with a valid (and sometimes invalid!) query to that data. We then fall back to "normal" programming techniques to actually take that query, get the data from OpenStreetMap using Overpass Turbo API, and display it on the map. That's where I think these Large Language Model AIs are useful in this context; allowing people who have no knowledge of your data or the technicalities of making calls to your data to get something out of it. 
+It's important to state that the AI does not actually "get the data from OpenStreetMap". The A.I. interprets what you ask of it "i want to read a book" and uses it's existing knowledge of the OpenStreetMap data structure to write and provide us with a valid (and sometimes invalid!) query to that data. We then fall back to "normal" programming techniques to actually take that query, get the data from OpenStreetMap using Overpass API, and display it on the map. That's where I think these Large Language Model AIs are useful in this context; allowing people who have no knowledge of your data or the technicalities of making calls to your data to get something out of it. 
 
 ## Asking the map...
 <img width="631" alt="Screenshot 2023-03-28 at 23 43 41" src="https://user-images.githubusercontent.com/21079244/228805890-9fa039d8-616c-47e7-9cd5-10967db53723.png">
@@ -18,8 +18,8 @@ You can see a video of an early verison here: https://twitter.com/steveattewell/
 
 ## How does it work?
 1. It takes any input you give it e.g. "Car parks", or "I want to read a book" and asks chatgpt-4 API to write a filter query 
-for the Overpass Turbo API 
-2. Takes the resultin query that gpt-4 write and then uses that to make a call to Overpass Turbo tog et features from OpenStreetMap
+for the Overpass API 
+2. Takes the resultin query that gpt-4 write and then uses that to make a call to Overpass to get features from OpenStreetMap
 3. Displays whatever features it recieved on the map (or an error if chatgpt-4 failed to write a great query.
 
 ## EXAMPLE: If you centre the map over London and enter: "I want to see a show"
