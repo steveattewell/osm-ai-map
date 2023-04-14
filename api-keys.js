@@ -11,8 +11,8 @@ Pricing: https://www.maptiler.com/cloud/pricing/
 
 */
 const keys = {
-    openAPIKey: "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",
-    maptilerAPIKey: "H1OJdqDMg2TTgIO5zlTN"
+    openAPIKey: "xxxx",
+    maptilerAPIKey: "xxxx"
   };
   
   export default keys;
