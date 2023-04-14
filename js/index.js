@@ -241,8 +241,18 @@ function askOpenAI(searchText){
 
         var openAIPrompt = 'Write me a data query for Open Streetmap that returns common features known to exist in the OpenStreetMap database that are related to the term "' + searchText + '" within this bounding-box ' + location + ' .\n'
         + 'Respond with just the "data" part of the querystring on a single line and no explanation.'
-        + 'Format your response like this: data=[out:json][timeout:25];{INSERT_QUERY_HERE};out;>;out skel qt;'
+        + 'Format your response like this: data=[out:json][timeout:25];{INSERT_QUERY_HERE};out;>;out skel qt;\n\n'
+        + 'Example phrases and expected responses are:\n'
+        + '"Hills that are over a height of 500 meters" within the bounding box 52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187\n'
+        + 'data=[out:json][timeout:25];nwr["natural"="peak"](if:number(t["ele"])>500)(52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187);out;>;out skel qt;\n\n'
+        + '"Hilltops" within the bounding box 52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187\n'
+        + 'data=[out:json][timeout:25];nwr["natural"="peak"](52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187);out;>;out skel qt;\n\n'
+        + '"Buildings" within the bounding box 52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037\n'
+        + 'data=[out:json][timeout:25];nwr["building"](52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037);out;>;out skel qt;\n\n'
+        + '"Bridges over rivers" within the bounding box 52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037\n'
+        + '?data=[out:json][timeout:25];nwr["waterway"="river"](52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037);nwr(around:0)["bridge"];out;>;out skel qt;'
         ;
+        
         console.log("Asking OpenAI: " + openAIPrompt);
         
         var xhr = new XMLHttpRequest();

@@ -11,9 +11,9 @@ Pricing: https://www.maptiler.com/cloud/pricing/
 
 */
 const keys = {
-  openAPIKey: "[INSERT_YOUR_OPENAI_API_KEY_HERE]", //https://platform.openai.com/account/api-keys
-  maptilerAPIKey: "[INSERT_YOUR_MAPTILER_API_KEY_HERE]" //https://cloud.maptiler.com/account/keys/
-};
-
-export default keys;
+    openAPIKey: "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",
+    maptilerAPIKey: "H1OJdqDMg2TTgIO5zlTN"
+  };
+  
+  export default keys;
 

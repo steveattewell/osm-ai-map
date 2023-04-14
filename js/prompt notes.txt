@@ -1,0 +1,30 @@
+A mess of notes regarding building a good prompt
+
+This is a great resource:
+https://dev.overpass-api.de/overpass-doc/en/criteria/chaining.html
+
+Examples to give the AI....
+
+'"Hills that are over a height of 500 meters" within the bounding box 52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187\n'
+        + 'data=[out:json][timeout:25];nwr["natural"="peak"](if:number(t["ele"])>500)(52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187);out;>;out skel qt;\n\n'
+        + '"Hilltops" within the bounding box 52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187\n'
+        + 'data=[out:json][timeout:25];nwr["natural"="peak"](52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187);out;>;out skel qt;\n\n'
+        + '"Buildings" within the bounding box 52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037\n'
+        + 'data=[out:json][timeout:25];nwr["building"](52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037);out;>;out skel qt;\n\n'
+        + '"Bridges over rivers" within the bounding box 52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037\n'
+        + '?data=[out:json][timeout:25];nwr["waterway"="river"](52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037);nwr(around:0)["bridge"];out;>;out skel qt;';
+        
+Text URLs
+
+        https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];nwr["natural"="peak"](if:number(t["ele"])>500)(52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187);out;>;out skel qt;
+        https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];nwr["natural"="peak"](52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187);out;>;out skel qt;
+        https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];nwr["building"](52.759164696417656,-3.8326491864094407,52.76930556270253,-3.8194149054336037);out;>;out skel qt;
+        https://overpass-api.de/api/interpreter?
+        https://overpass-api.de/api/interpreter?
+        https://overpass-api.de/api/interpreter?
+
+https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];nwr["waterway"="river"](51.489433620529155,-0.13991238228771863,51.52182062452479,-0.07058761771145328);nwr(around:0)["bridge"];out;>;out skel qt;
+
+
+
+https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];nwr["waterway"="river"](52.73391205830765,-3.771225719808456,52.841790059695626,-3.5933869949970187);nwr(around:0)["bridge"];out;>;out skel qt;
